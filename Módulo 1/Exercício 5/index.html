@@ -1,4 +1,26 @@
-<!--  -->
+<!-- 
+5º exercício
+Dado o seguinte vetor de objetos:
+
+var usuarios = [
+ {
+ nome: "Diego",
+ habilidades: ["Javascript", "ReactJS", "Redux"]
+ },
+ {
+ nome: "Gabriel",
+ habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+ }
+];
+
+Escreva uma função que produza o seguinte resultado:
+
+O Diego possui as habilidades: Javascript, ReactJS, Redux
+O Gabriel possui as habilidades: VueJS, Ruby on Rails, Elixir
+
+Dica: Para percorrer um vetor você deve utilizar a sintaxe for...of e para unir valores de um array
+com um separador utilize o join.
+-->
 <!doctype html>
 <html lang="pt">
 
@@ -12,7 +34,12 @@
 
 
 	<body>
-        <p></p>
+		<input id="Nome" placeholder="Nome">
+		<input id="Habilidade" placeholder="Habilidade"><br><br>
+		<input type="button" value="Add Habilidade" onClick="maishab(Nome.value,Habilidade.value)">
+		<input type="button" value="Novo Usuário" onClick="novouser(Nome.value,Habilidade.value)">
+
+        <ul type="none"></ul>
         <script src="script.js"></script>
 	</body>
 

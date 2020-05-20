@@ -14,7 +14,7 @@ Dica: para verificar se um vetor contém um valor, utilize o método indexOf.
 
 const ul = document.querySelector('ul');
 
-var skills = ["eoq","xups","myne","eggs"];
+var skills = ["Javascript","ReactJS","React Nativa"];
 
 function mostrar(){
     ul.innerHTML='';
@@ -42,12 +42,14 @@ function remover(habilidade){
 function temHabilidade(habilidade){
     console.log("procura");
     if(skills.indexOf(habilidade)>=0){
-        alert('Habilidade existe');
+        alert(`Habilidade ${habilidade} existe`);
         console.log(true);
         return true;
     }else {
-        alert('Habilidade não existe');
+        alert(`Habilidade ${habilidade} não existe`)
         console.log(false);
         return false;
     }
 }
+mostrar();
+setTimeout(()=>temHabilidade("Javascript"),1000);

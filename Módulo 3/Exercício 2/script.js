@@ -19,3 +19,21 @@ Depois de preencher o input e adicionar, a seguinte lista deve aparecer abaixo:
  <li>repo5</li>
 </ul>
 */
+
+const ul = document.querySelector('ul');
+
+function buscar (user){
+    ul.innerHTML = '';
+    axios.get(`https://api.github.com/users/${user}/repos`)
+        .then(function(response){
+            response.data.map(repo => {
+                let li = document.createElement('li');
+                li.textContent = repo.name;
+                ul.appendChild(li);
+            })
+        })
+        .catch(function(error){
+            ul.textContent="Não existe";
+            console.log(error);
+        });
+}

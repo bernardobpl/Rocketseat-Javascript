@@ -18,14 +18,25 @@ Depois de preencher o input e adicionar, a seguinte lista deve aparecer abaixo:
  <li>repo4</li>
  <li>repo5</li>
 </ul>
+
+3º exercício
+A partir do resultado do exemplo anterior adicione um indicador de carregamento em tela no lugar
+da lista apenas enquanto a requisição estiver acontecendo:
+<li>Carregando...</li>
+Além disso, adicione uma mensagem de erro em tela caso o usuário no Github não exista.
+Dica: Quando o usuário não existe, a requisição irá cair no .catch com código de erro 404
 */
 
 const ul = document.querySelector('ul');
 
 function buscar (user){
     ul.innerHTML = '';
+    let load = document.createElement('li');
+    load.textContent= "Carregando...";
+    ul.appendChild(load);
     axios.get(`https://api.github.com/users/${user}/repos`)
         .then(function(response){
+            ul.innerHTML = '';
             response.data.map(repo => {
                 let li = document.createElement('li');
                 li.textContent = repo.name;
@@ -33,6 +44,7 @@ function buscar (user){
             })
         })
         .catch(function(error){
+            ul.innerHTML = '';
             ul.textContent="Não existe";
             console.log(error);
         });

@@ -1,0 +1,37 @@
+<!-- 
+1º exercício
+Crie uma função que recebe a idade de um usuário e retorna uma Promise que depois de 2
+segundos retornará se usuário é maior ou não que 18 anos. Se o usuário ter mais que 18 anos de
+idade o resultado deve cair no .then, caso contrário, no .catch
+
+function checaIdade(idade) {
+ // Retornar uma promise
+}
+checaIdade(20)
+ .then(function() {
+ console.log("Maior que 18");
+ })
+ .catch(function() {
+ console.log("Menor que 18");
+ });
+-->
+<!doctype html>
+<html lang="pt">
+
+	<head>
+		<title> Exercício </title>
+		<meta charset="UTF-8">
+		<meta name="description" content="">
+		<meta name="keywords" content="HTML,">
+		<meta name="author" content="Bernardo Bruno Pereira Lopes">
+	</head>
+
+
+	<body>
+        <input id="idade" placeholder="Idade">
+        <input type="button" onClick="check(idade.value)" value="Checar">
+        <p></p>
+        <script src="script.js"></script>
+	</body>
+
+</html>
